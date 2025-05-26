@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AARON</title>
+  <link rel="stylesheet" href="1.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* 留言區樣式（forum-開頭） */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .forum-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    .forum-container {
+      width: 60%;
+      border-radius: 20px;
+      padding: 32px 28px 24px 28px;
+      background: #d2cece;
+    }
+    .forum-title {
+      color: #0e0d0d;
+      opacity: 0.8;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: bold;
+      text-align: center;
+    }
+    .forum-form-group {
+      margin-bottom: 18px;
+    }
+    .forum-form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #444;
+      font-weight: 500;
+    }
+    #forumName,
+    #forumMessage {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #bfc9d1;
+      border-radius: 5px;
+      font-size: 1rem;
+      background: #f9fbfc;
+      transition: border 0.2s;
+    }
+    #forumName:focus,
+    #forumMessage:focus {
+      border: 1.5px solid #2d5a8c;
+      outline: none;
+      background: #fff;
+    }
+    #forumMessage {
+      resize: vertical;
+      min-height: 40px;
+      max-height: 180px;
+    }
+    .forum-btn {
+      width: 100%;
+      background: #242121;
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+      margin-bottom: 10px;
+    }
+    .forum-btn:hover {
+      background: #434343;
+    }
+    .forum-toggle-comments {
+      text-align: center;
+      margin: 20px 0;
+      cursor: pointer;
+      color: #2d5a8c;
+      font-weight: bold;
+    }
+    .forum-comments {
+      display: block;
+    }
+    .forum-comment {
+      position: relative;
+      background: #f2f6fa;
+      border-radius: 7px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(44, 90, 140, 0.04);
+    }
+    .forum-author {
+      font-weight: bold;
+      color: #2d5a8c;
+      margin-bottom: 4px;
+    }
+    .forum-text {
+      color: #333;
+      white-space: pre-line;
+    }
+    .forum-delete-btn {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      color: #999;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .forum-delete-btn:hover {
+      color: #d00;
+    }
+    .forum-hidden {
+      display: none;
+    }
+    .forum-time {
+  font-size: 0.85em;
+  color: #888;
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+    @media (max-width: 800px) {
+      .forum-container {
+        max-width: 80vw;
+        width: 80vw;
+        margin: 0 auto;
+      }
+      .forum-container {
+    max-width: 98vw;
+    padding: 10px 4vw 10px 4vw;
+  }
+  .forum-title {
+    font-size: 1rem;
+  }
+  .forum-form-group label,
+  #forumName,
+  #forumMessage {
+    font-size: 0.85rem;
+  }
+  .forum-btn {
+    font-size: 0.92rem;
+    padding: 8px 0;
+  }
+  .forum-toggle-comments {
+    font-size: 0.9em;
+  }
+  .forum-comment {
+    font-size: 0.85rem;
+    padding: 7px 7px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+  }
+  .forum-author {
+    font-size: 0.92em;
+  }
+  .forum-text {
+    font-size: 0.9em;
+  }
+  .forum-time {
+    font-size: 0.75em;
+  }
+}
+
+  </style>
+</head>
+<body class="philosophy-page">
+  <header>
+    <a href="1.html" class="logo">AARON</a>
+    <div class="hamburger">&#9776;</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="1.html">HOME</a></li>
+        <li><a href="2.html">DESIGN PHILOSOPHY</a></li>
+        <li><a href="3.html">ABOUT</a></li>
+        <li><a href="4.html">RESUME</a></li>
+         <li><a href="5.html">MORE</a></li>
+         <li><a href="6.html">GAME</a></li>
+         <li><a href="7.html" title="手機"><i class="fa fa-mobile-alt fa-lg" ></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="philosophy-main">
+    <!-- 1 -->
+    <section class="philosophy-section row">
+      <div class="philosophy-img-col">
+        <img src="IMG_0256 2.jpeg" alt="設計" class="philosophy-img">
+      </div>
+      <div class="philosophy-text-col">
+        <h2 class="philosophy-title">設計理念</h2>
+        <div class="newsletter-divider"></div>
+        <p class="philosophy-desc">
+簡易操作的自我介紹內容網站，想說是要做有關自己的網站，就放了自己的照片，背景有歪掉，可是整體算最乾淨的一張了，另外有試過一些其他想要的設計，但有些失敗，暫時先做到這裡        </p>
+<a href="#forumSection" class="philosophy-btn" id="forumLinkBtn">FORUM</a>      </div>
+    </section>
+    <!-- 2 -->
+    <section class="philosophy-section row reverse">
+      <div class="philosophy-img-col">
+        <img src="S__307027970 8.jpg" alt="設計" class="philosophy-img">
+      </div>
+      <div class="philosophy-text-col">
+        <h2 class="philosophy-title">視覺風格</h2>
+        <div class="newsletter-divider"></div>
+        <p class="philosophy-desc">
+         整體視覺採用極簡風格，營造舒適且具現代感的瀏覽氛圍。字體選用清晰易讀的無襯線字型，並以高對比色強調重點資訊
+        </p>
+      </div>
+    </section>
+    <!-- 3 -->
+    <section class="philosophy-section row">
+      <div class="philosophy-img-col">
+        <iframe width="400" height="225" src="https://hackmd.io/@3h11rjC3TSSfytefXOANyg/r12JcLK-ex" 
+      title="hackmd" frameborder="0" allowfullscreen class="philosophy-img"></iframe>
+      </div>
+      <div class="philosophy-text-col">
+        <h2 class="philosophy-title">網頁結構</h2>
+        <div class="newsletter-divider"></div>
+        <p class="philosophy-desc">
+主要分為三大部分：頁首/導覽列、主內容區、頁尾，另外加入RWD 響應式設計使用 media query 在不同裝置下自動調整排版與字型大小，確保手機、桌機都能良好顯示（完整版網頁結構寫在HackMD)
+        </p>
+      </div>
+    </section>
+    <!-- 4 -->
+    <section class="philosophy-section row reverse">
+      <div class="philosophy-img-col">
+        <iframe width="400" height="225" src="https://onepagelove.com/mntn" 
+      title="YouTube video" frameborder="0" allowfullscreen class="philosophy-img"></iframe>
+      </div>
+      <div class="philosophy-text-col">
+        <h2 class="philosophy-title">參考網站</h2>
+        <div class="newsletter-divider"></div>
+        <p class="philosophy-desc">
+            設計參考了pinterest 上面的web design
+        </p>
+        <a href="#" class="philosophy-btn" id="backToTopBtn">返回</a>
+      </div>
+    </section>
+
+    <!-- 留言區開始 -->
+             <div class="newsletter-divider" style="padding:0; margin: 0 auto; display: block;"></div>
+<section class="forum-section" id="forumSection">
+        
+      <div class="forum-container">
+        <h2 class="forum-title">留言</h2>
+        <form id="forumForm" autocomplete="off">
+  <div class="forum-form-group">
+    <label for="forumName"></label>
+    <input type="text" id="forumName" placeholder="姓名" />
+  </div>
+  <div class="forum-form-group">
+    <label for="forumMessage"></label>
+    <textarea id="forumMessage" placeholder="請輸入留言內容"></textarea>
+  </div>
+  <button type="submit" class="forum-btn">送出</button>
+</form>
+        <div class="forum-toggle-comments" id="forumToggleBtn">顯示更多留言</div>
+        <div class="forum-comments" id="forumComments"></div>
+      </div>
+    </section>
+    <!-- 留言區結束 -->
+  </main>
+ <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBS10UuKl3G6-MhESO-wngNF8sjPzqDoWk",
+  authDomain: "aaron-3e3ea.firebaseapp.com",
+  databaseURL: "https://aaron-3e3ea-default-rtdb.firebaseio.com",
+  projectId: "aaron-3e3ea",
+  storageBucket: "aaron-3e3ea.appspot.com",
+  messagingSenderId: "343320869378",
+  appId: "1:343320869378:web:5d7c134c3754ed1632451b",
+  measurementId: "G-11VYJSLT11"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let isExpanded = false;
+let allComments = [];
+
+document.getElementById("forumForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = document.getElementById("forumName").value.trim();
+  const message = document.getElementById("forumMessage").value.trim();
+  if (!name || !message) return;
+
+  try {
+    await addDoc(collection(db, "comments"), {
+      name,
+      message,
+      createdAt: serverTimestamp()
+    });
+    document.getElementById("forumForm").reset();
+    await loadComments();
+    showComments();
+  } catch (error) {
+    console.error("留言送出失敗：", error);
+  }
+});
+
+async function deleteComment(id) {
+  if (confirm("確定要刪除這則留言嗎？")) {
+    try {
+      await deleteDoc(doc(db, "comments", id));
+      await loadComments();
+      showComments();
+    } catch (error) {
+      alert("刪除失敗");
+    }
+  }
+}
+
+async function loadComments() {
+  allComments = [];
+  try {
+    const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((docSnap) => {
+      const data = docSnap.data();
+      allComments.push({
+        id: docSnap.id,
+        name: data.name,
+        message: data.message,
+        createdAt: data.createdAt?.toDate().toLocaleString() ?? "剛剛"
+      });
+    });
+  } catch (error) {
+    console.error("載入留言失敗：", error);
+  }
+}
+
+function showComments() {
+  const container = document.getElementById("forumComments");
+  container.innerHTML = "";
+  const commentsToShow = isExpanded ? allComments : allComments.slice(0, 1);
+
+  commentsToShow.forEach((c) => {
+    const div = document.createElement("div");
+    div.className = "forum-comment";
+
+    // 用 textContent 防止 XSS
+    const author = document.createElement("div");
+    author.className = "forum-author";
+    author.textContent = c.name;
+
+    const text = document.createElement("div");
+    text.className = "forum-text";
+    text.textContent = c.message;
+
+    const time = document.createElement("div");
+    time.className = "forum-time";
+    time.textContent = c.createdAt;
+
+    const delBtn = document.createElement("button");
+    delBtn.className = "forum-delete-btn";
+    delBtn.textContent = "×";
+    delBtn.onclick = function() {
+      deleteComment(c.id);
+    };
+
+    div.appendChild(author);
+    div.appendChild(text);
+    div.appendChild(time);
+    div.appendChild(delBtn);
+    container.appendChild(div);
+  });
+
+  // 顯示/隱藏「顯示更多留言」按鈕，並顯示留言總數與icon
+  const toggleBtn = document.getElementById("forumToggleBtn");
+  if (allComments.length > 1) {
+    toggleBtn.style.display = "block";
+    toggleBtn.innerHTML = `
+      <i class="fa-solid fa-message" style="margin-right:6px;"></i>
+      ${isExpanded ? "關閉" : "顯示更多留言"}
+      <span style="margin-left:8px;">(${allComments.length})</span>
+    `;
+  } else {
+    toggleBtn.style.display = "none";
+  }
+}
+document.getElementById("forumToggleBtn").onclick = function() {
+  isExpanded = !isExpanded;
+  showComments();
+};
+
+window.addEventListener("DOMContentLoaded", async () => {
+  await loadComments();
+  showComments();
+});
+</script>
+
+  <script src="1.js"></script>
+</body>
+</html>

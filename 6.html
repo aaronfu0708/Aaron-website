@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>全螢幕 Iframe </title>
+    <header>
+     <a href="1.html"class="logo">AARON</a>
+    <div class="hamburger">&#9776;</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="1.html">HOME</a></li>
+        <li><a href="2.html">DESIGN PHILOSOPHY</a></li>
+        <li><a href="3.html">ABOUT</a></li>
+        <li><a href="4.html">RESUME</a></li>
+         <li><a href="5.html">MORE</a></li>
+         <li><a href="6.html">GAME</a></li>
+         <li><a href="7.html" title="手機"><i class="fa fa-mobile-alt fa-lg" ></i></a></li>
+      </ul>
+    </nav>
+  </header>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: none;
+            overflow: hidden;
+            height: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        @media (max-width: 800px) {
+            body.game-page .logo {
+  display: none;
+}
+ .hamburger {
+                display: block;
+                font-size: 40px;
+                position: fixed;
+                right: 30px;
+                bottom: 25px;
+                top: auto;
+                z-index: 2000;
+                transform: rotate(90deg); /* 右下角，並旋轉90度 */
+                transition: transform 0.3s;
+            }
+            nav {
+                width: 100vw;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(100%);
+                transition: opacity 0.3s, transform 0.3s;
+                background: rgba(54, 45, 49, 0.95);
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                top: auto;
+                z-index: 1999;
+                border-radius: 18px 18px 0 0;
+                box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+            }
+            nav.active {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 18px;
+                margin-top: 10px;
+                align-items: flex-start;
+                padding: 28px 24px 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body class="game-page">
+    <iframe src="https://slowroads.io/#A2-6f964a8e@0" allowfullscreen></iframe>
+    <script src="1.js"></script>
+</body>
+</html>

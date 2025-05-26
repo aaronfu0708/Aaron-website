@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AARON</title>
+  <link rel="stylesheet" href="1.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-image: url('IMG_0256 3.JPG');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .main-hero,
+    .who-section,
+    .services-section {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 40px;
+      padding-right: 40px;
+      box-sizing: border-box;
+    }
+    .main-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 0 0 0;
+      min-height: 520px;
+      background: #232526;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      padding: 40px 32px;
+      margin: 120px auto 40px auto;
+      gap: 36px;
+    }
+    .hero-left {
+      flex: 1 1 420px;
+      padding: 40px 40px 40px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 320px;
+    }
+    .hero-hi {
+      font-size: 1.2em;
+      color: #bdbdbd;
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .hero-desc {
+      font-size: 1.2em;
+      color: #bdbdbd;
+      margin-bottom: 28px;
+    }
+    .hero-contact-btn {
+      background: #1ed760;
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 4px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 36px;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hero-contact-btn:hover {
+      background: #14b94d;
+    }
+    .hero-info-row {
+      display: flex;
+      gap: 48px;
+      margin-top: 24px;
+      font-size: 1em;
+      color: #bdbdbd;
+    }
+    .hero-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-info-label {
+      font-size: 0.98em;
+      color: #bebebe;
+    }
+    .hero-info-value {
+      font-size: 1.05em;
+      color: #fff;
+      font-weight: 500;
+    }
+    .hero-right {
+      flex: 1 1 340px;
+      min-width: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-left: 10px;
+      margin: 0;
+    }
+    .hero-img-main {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #222;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+      filter: none !important;
+    }
+    /* Who am I section */
+    .who-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin: 120px auto 40px auto;
+      background: #232526;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      padding: 40px 32px;
+      gap: 36px;
+    }
+    .who-img-col {
+      flex: 1 1 260px;
+      min-width: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .who-img {
+      width: 220px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #222;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      filter: none !important;
+    }
+    .who-text-col {
+      flex: 2 1 400px;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+    .who-title {
+      color: #1ed760;
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .who-name {
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .who-desc {
+      color: #bdbdbd;
+      font-size: 1.08em;
+      margin-bottom: 12px;
+    }
+    .who-info-row {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 10px;
+      font-size: 1em;
+      color: #bdbdbd;
+    }
+    .who-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .who-info-label {
+      font-size: 0.98em;
+      color: #888;
+    }
+    .who-info-value {
+      font-size: 1.05em;
+      color: #fff;
+      font-weight: 500;
+    }
+    .who-btn {
+      background: #1ed760;
+      color: #fff;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .who-btn:hover {
+      background: #14b94d;
+    }
+    /* Services section */
+    .services-section {
+      margin: 0 auto 40px auto;
+      padding: 0 0 40px 0;
+    }
+    .services-title {
+      font-size: 2em;
+      font-weight: bold;
+      color: #fcfbfb;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .service-card {
+      background: #232526;
+      border-radius: 12px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 180px;
+      transition: transform 0.15s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px) scale(1.03);
+    }
+    .service-icon {
+      font-size: 2.2em;
+      color: #1ed760;
+      margin-bottom: 18px;
+    }
+    .service-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .service-desc {
+      color: #bdbdbd;
+      font-size: 1em;
+    }
+    /* RWD */
+    @media (max-width: 800px) {
+      
+      .main-hero,
+      .who-section,
+      .services-section {
+        flex-direction: column !important;
+        align-items: stretch;
+        padding-left: 3vw !important;
+        padding-right: 3vw !important;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        max-width: 94vw;
+      }
+      .main-hero {
+        background-color: #222;
+        border-radius: 18px;
+        min-height: unset;
+        padding: 0;
+        margin-top: 115px;
+        width: 88vw;
+        margin-bottom: auto;
+      }
+      .main-hero {
+    flex-direction: column !important;
+  }
+  .hero-right {
+    padding-bottom: 0 !important;
+    margin-top: -120px; /* 貼近上一區塊，可依需求調整 */
+  }
+      .hero-left, .hero-right {
+        padding: 0 !important;
+        min-width: 0;
+      }
+      .hero-left{
+        margin-bottom: 0;
+      }
+      .hero-right {
+        justify-content: center;
+        padding-bottom: 18px;
+      
+
+      }
+      .hero-img-main {
+        width: 90% !important;
+        max-width: 320px;
+        height: 180px !important;
+        margin-top: 0;
+        display: block;
+      }
+      .hero-title {
+        font-size: 2em;
+      }
+      .hero-desc {
+        font-size: 1em;
+      }
+      .hero-info-row {
+        margin-top: 0;;
+        flex-direction: column;
+        gap: 11px;
+        font-size: 0.95em;
+      }
+      .who-section {
+        flex-direction: column !important;
+        gap: 12px;
+        padding: 12px 0;
+        margin: 0 20px;
+         box-sizing: border-box;
+         display: block;
+      }
+      .who-img {
+        width: 70vw !important;
+         max-width: 300px;
+       height: 150px !important;
+        margin: 30px auto;
+        display: block;
+      }
+      .who-title {
+        font-size: 1em;
+      }
+      .who-name {
+        font-size: 1em;
+      }
+      .who-desc {
+        font-size: 0.8em;
+        
+      }
+      .who-info-row {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.95em;
+      }
+      .services-title {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+      .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+      }
+      .service-card {
+        padding: 14px 8px;
+        min-height: 90px;
+      }
+      .hero-contact-btn {
+        width: 94%;
+        font-size: 1em;
+        padding-left: 7px;
+      }
+      .who-section {
+        margin-top: 115px;
+      }
+      .who-btn {
+        width: 94%;
+        font-size: 1em;
+        padding-left: 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="1.html" class="logo">AARON</a>
+    <div class="hamburger">&#9776;</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="1.html">HOME</a></li>
+        <li><a href="2.html">DESIGN PHILOSOPHY</a></li>
+        <li><a href="3.html">ABOUT</a></li>
+        <li><a href="4.html">RESUME</a></li>
+        <li><a href="5.html">MORE</a></li>
+        <li><a href="6.html">GAME</a></li>
+        <li><a href="7.html" title="手機"><i class="fa fa-mobile-alt fa-lg" ></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <!-- Who am I Section -->
+  <section class="who-section">
+    <div class="who-img-col">
+      <img src="IMG_7866.jpeg" alt="Who am I" class="who-img">
+    </div>
+    <div class="who-text-col">
+      <div class="who-title">CHENG FU</div>
+      <div class="who-name">我是洪誠甫，目前正在學習全端工程</div>
+      <div class="who-desc">
+        我應該算是比較內向的個性，但因為班上大家個性都很好，讓我可以很快就跟大家認識，並且只要有不會的部分，同學都會很熱心的回應我的問題，希望每個人在課程結訓的時候，都可以找到自己想要並且喜歡的工作。
+      </div>
+      <div class="who-info-row">
+        <div class="who-info-col">
+          <span class="who-info-label">Name:</span>
+          <span class="who-info-value">Hong Cheng Fu</span>
+        </div>
+        <div class="who-info-col">
+          <span class="who-info-label">From:</span>
+          <span class="who-info-value">Taichung, TW</span>
+        </div>
+        <div class="who-info-col">
+          <span class="who-info-label">Gmail:</span>
+          <span class="who-info-value">chengfu0624@gmail.com</span>
+        </div>
+      </div>
+      <a href="4.html" class="who-btn">RESUME</a>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fa fa-code"></i></div>
+        <div class="service-title">Web Development</div>
+        <div class="service-desc">HTML CSS javascript</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa fa-cube"></i></div>
+        <div class="service-title">Sport</div>
+        <div class="service-desc"> basketball</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa fa-paint-brush"></i></div>
+        <div class="service-title">Design</div>
+        <div class="service-desc">Photoshop  Adobe illustrator</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa fa-headset"></i></div>
+        <div class="service-title">Music</div>
+        <div class="service-desc">Jay Chou</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa fa-layer-group"></i></div>
+        <div class="service-title">Education</div>
+        <div class="service-desc">Shih Chien University</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa fa-chart-bar"></i></div>
+        <div class="service-title">Movie</div>
+        <div class="service-desc">horror movies</div>
+      </div>
+    </div>
+  </section>
+  <script src="1.js"></script>
+</body>
+</html>

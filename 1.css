@@ -1,0 +1,563 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.home-page {
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+/* Header Navigation */
+header {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  z-index: 10;
+  background: transparent;
+}
+.main-title {
+  font-size: 100px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  color: white;
+  text-shadow: 2px 4px 16px rgba(0,0,0,0.5);
+  text-align: left;
+  letter-spacing: 10px;
+  margin-top: 300px;
+  margin-left: 42px;
+  margin-bottom: 0;
+  position: static;
+  align-self: flex-start; /* 這行讓 h1 靠左 */
+}
+.logo {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+body {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-image: url('IMG_0256 3.JPG');
+  background-size: 100% 100%;      
+  background-position: top center; /* 靠上對齊 */
+  background-repeat: no-repeat;
+}
+/* Hero Section */
+.hero {
+  min-height: 100vh;              /* 讓主區塊至少佔滿整個視窗高度 */      /* 內容垂直排列 */
+  box-sizing: border-box;
+  padding: 0 12px;                /* 手機時左右留白 */
+}
+
+
+/* Center Button */
+.btn {
+  background-color: #fff;      /* 一開始白底 */
+  color: #222;                 /* 一開始黑字 */
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 
+    color 0.3s ease, 
+    background 0.3s ease, 
+    border 0.3s ease;
+  border: 1px solid white;     /* 保留白色邊框 */
+  cursor: pointer;
+  margin-left: 0;
+}
+.btn-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 8px 0;
+  margin-left: 42px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  width: fit-content;
+}
+.btn-bg:hover .btn {
+  background: transparent;     /* 變透明 */
+  color: #fff;                 /* 變白字 */
+  border: 1px solid white;     /* 邊框仍為白色 */
+}
+.hamburger {
+  display: none;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  z-index: 20;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+header.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+header .logo,
+header .nav-links a {
+  color: white;
+  transition: color 0.3s;
+}
+
+header.scrolled .logo,
+header.scrolled .nav-links a {
+  color: #222;
+}
+header .hamburger {
+  color: white;
+  transition: color 0.3s;
+}
+
+header.scrolled .hamburger {
+  color: #222;
+}
+.philosophy-page{
+  background-image: url('IMG_0256 5.JPG'); /* 換成你要的圖片 */
+  background-size: 100% 80%;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.about-page {
+  background-image: url('IMG_0256 5.JPG'); /* 換成你要的圖片 */
+  background-size: 100% 80%;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.about-page .footer-divider {
+  border: none;
+  border-top: 1.5px solid #ddd;
+  margin: 48px 0 0 0;
+}
+
+.about-page .footer-bar {
+  width: 100%;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 32px 0 12px 0;
+  margin: 0 auto;
+  max-width: 100vw;
+  text-align: left;
+}
+
+.about-page .footer-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-page .footer-col {
+  min-width: 160px;
+}
+
+.about-page .footer-title {
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.about-page .footer-info {
+  color: #222;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.about-page .footer-social a {
+  color: #111;
+  font-size: 24px;
+  margin: 0 10px 0 0;
+  transition: color 0.2s;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.about-page .footer-social a:hover {
+  color: #e1306c;
+}
+
+.about-page .footer-copy {
+  font-size: 14px;
+  color: #222;
+  margin-top: 12px;
+  text-align: right;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.about-page .footer-copy a {
+  color: #222;
+  text-decoration: underline;
+}
+.about-page .about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 0 auto;    /* 上方 margin 改小，靠近上方 */
+  padding: 0 20px 24px 20px; /* 上下 padding 減少 */
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.about-page .about-photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.about-page .about-text {
+  max-width: 480px;
+  margin-left: 0;
+}
+
+.about-page .about-title {
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  color: #111;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+.about-page .about-desc {
+  font-size: 22px;
+  color: #222;
+  line-height: 1.7;
+  margin-bottom: 0;
+  padding: 0;
+}
+.about-page .about-desc p{
+  font-size: 16px;
+} 
+/* ...existing code... */
+
+.philosophy-main {
+  max-width: 1200px;
+  margin: auto ;
+  padding-top: 800px;
+  padding-bottom: 60px;
+}
+
+.philosophy-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  gap: 40px;
+}
+
+.philosophy-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.philosophy-img-col {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.philosophy-img {
+  height: 450px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+.philosophy-text-col {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.philosophy-title {
+  font-size: 38px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-weight: bold;
+  margin-bottom: 18px;
+  color: #111;
+}
+
+.philosophy-desc {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.philosophy-btn {
+  background: #111;
+  color: #fff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.philosophy-btn:hover {
+  background: #333;
+}
+
+/* Newsletter 區塊 */
+
+
+.newsletter-divider {
+  width: 2px;
+  height: 120px;
+  background: #111;
+  margin-bottom: 32px;
+}
+.nav-links a[title="手機"]:hover,
+.nav-links a[title="手機"]:focus {
+  border: 1px solid transparent !important;
+  background: none !important;
+  padding: 5px 10px !important;
+}
+.nav-links a[title="手機"] i {
+  transition: transform 0.2s;
+}
+.nav-links a[title="手機"]:hover i,
+.nav-links a[title="手機"]:focus i {
+  transform: scale(1.35);
+}
+
+
+
+@media (max-width: 800px) {
+  body {
+    background-image: url('IMG_0256 3.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    z-index: 200;
+  }
+  .logo {
+    color: white;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+  .main-title {
+    font-size: 40px;
+    margin-top: 180px;
+    margin-left: 23px;
+  }
+  .hamburger {
+    display: block;
+    font-size: 40px;
+    position: static;
+    margin-bottom: 0;
+    z-index: 20;
+  }
+ 
+  nav {
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: rgb(54, 45, 49,0.9);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 150;
+  }
+  nav.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .nav-links a {
+    font-weight: normal;
+  }
+  header.scrolled .nav-links a {
+    color: #fff !important;
+  }
+  .btn {
+    padding: 10px 25px;
+    font-size: 13px;
+  }
+  .philosophy-page {
+  background-image: url('IMG_0256 4.JPG'); /* 換成你要的圖片 */
+  background-size: 100% 80%;
+}
+  .about-page {
+  background-image: url('IMG_0256 4.JPG'); /* 換成你要的圖片 */
+  background-size: 100% 80%;
+  }
+  
+  
+  .about-page .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-left: 24px;
+  }
+  .about-page .footer-copy {
+    text-align: left;
+    padding-left: 24px;
+  }
+  .about-page .about-container {
+    flex-direction: column;
+         /* 讓上下間距更小 */
+    padding: 0 8px 16px 8px;  /* 上下 padding 減少 */
+    margin-top: -30px;     /* 更靠近上方 */
+  }
+  .about-page .about-photo {
+    width: 220px;
+    height: 220px;
+  }
+  .about-page .about-title {
+    font-size: 30px;
+    margin-bottom: 16px;
+    text-align: center;
+    width: 100%;
+  }
+ 
+  .about-page .about-desc {
+    font-size: 17px;
+  }
+  .about-page .about-desc p{
+  font-size: 13px;
+} 
+  .philosophy-section {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .philosophy-section.reverse {
+    flex-direction: column;
+    
+  }
+  .philosophy-img {
+    max-width: 90%;
+    max-height: 600px
+  }
+  .philosophy-main {
+    padding-top: 700px;
+    padding-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+  .philosophy-text-col {
+    align-items: center;
+    text-align: center;
+  }
+  .philosophy-title,
+  .philosophy-desc,
+  .philosophy-btn {
+    text-align: center;
+    align-self: center;
+  }
+  .philosophy-desc {
+    text-align: justify;
+  }
+  
+  .philosophy-title {
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+  .philosophy-desc {
+    text-align: justify;
+    font-size: 15px;
+    margin:0 20px 10px 20px ;
+  }
+  .nav-links li:last-child {
+    display: none;
+  }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AARON - PREVIEW</title>
+  <link rel="stylesheet" href="1.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+    .bg-blur {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url('IMG_0256 3.JPG') center center/cover no-repeat;
+      filter: blur(14px) brightness(1);
+      pointer-events: none;
+    }
+    .preview-slider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin-top: 20px;
+      position: fixed;
+      width: 100vw;
+      left: 0;
+      top: 0;
+      background: none;
+      z-index: 2;
+      pointer-events: none; /* 讓 header 可以點擊 */
+    }
+    .preview-iframe {
+      width: 352px;
+      height: 660px;
+      max-width: 90vw;
+      max-height: 80vh;
+      border: 15px solid #222;
+      border-top: 62px solid #222;
+      border-bottom: 100px solid #222;
+      box-sizing: border-box;
+      background: #fff;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      border-radius: 40px;
+      margin: 0;
+      transition: box-shadow 0.2s;
+      display: block;
+      pointer-events: auto; /* 讓 iframe 可以互動 */
+    }
+    header, main {
+      position: relative;
+      z-index: 3;
+    }
+    @media (max-width: 1045px) {
+      .nav-links li:last-child {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-blur"></div>
+  <header>
+    <a href="1.html" class="logo">AARON</a>
+    <div class="hamburger">&#9776;</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="1.html">HOME</a></li>
+        <li><a href="2.html">DESIGN PHILOSOPHY</a></li>
+        <li><a href="3.html">ABOUT</a></li>
+        <li><a href="4.html">RESUME</a></li>
+        <li><a href="5.html">MORE</a></li>
+        <li><a href="6.html">GAME</a></li>
+        <li><a href="7.html" title="手機"><i class="fa fa-mobile-alt fa-lg" ></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="preview-slider">
+      <iframe class="preview-iframe" id="previewFrame" src="1.html"></iframe>
+    </div>   
+  </main>
+  <script src="1.js"></script>
+</body>
+</html>
