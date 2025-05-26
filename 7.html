@@ -56,12 +56,23 @@
       position: relative;
       z-index: 3;
     }
-    @media (max-width: 1045px) {
+    @media (max-width: 1000px) {
       .nav-links li:last-child {
         display: none;
       }
-    }
+      main {
+    display: none;
+  }
+  .preview-iframe {
+    pointer-events: none !important;
+  }
+}
   </style>
+ <script>
+    if (window.matchMedia('(max-width: 1000px)').matches) {
+      window.location.replace("1.html");
+    }
+  </script>
 </head>
 <body>
   <div class="bg-blur"></div>
@@ -86,5 +97,6 @@
     </div>   
   </main>
   <script src="1.js"></script>
+  
 </body>
 </html>
